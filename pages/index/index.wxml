@@ -1,0 +1,33 @@
+<view class="container" style="height:{{viewHeight}}px" >
+	<scroll-view class="scroll-con" scroll-y="true" upper-threshold="120" lower-threshold="50" bindscrolltolower="scrolltolower" bindscrolltoupper="scrollTap"  style="height:{{viewHeight}}px;">
+		<view class="top_menu_list">
+			<block wx:for="{{channelList}}">
+				<view class="btn {{currenttab == item.channelId?'active':'' }}" data-channelId = "{{item.channelId}}" data-name="{{item.name}}" bindtap="tabTap">{{item.name}}</view>
+			</block>
+		</view>
+		<block wx:for="{{contentlist}}" wx:for-item="item"  wx:for-index="i">
+				<view wx:if="{{item.imageurls.length>1}}"  class="news_item">
+					<text data-index="{{i}}" class="title" bindtap="redirectTodetail">{{item.title}}</text>	
+					<view class="group-image"> 
+						<block wx:for="{{item.imageurls}}" wx:for-item="items"  data-if="{{i}}">
+							<view class="img_holder"><image mode="aspectFill" src="{{items.url}}" binderror="" bindload=""></image></view>
+						</block>
+					</view>
+					<view class="news-source">{{item.source}}</view>
+				</view>
+				<view wx:elif="{{item.imageurls.length == 1}}"  class="news_item">
+					<view  class="des">
+						<text data-index="{{i}}" class="title" bindtap="redirectTodetail">{{item.title}}</text>
+						<view class="news-source">{{item.source}}</view>
+					</view>
+					<view class="img_holder"><image mode="aspectFill" src="{{item.imageurls[0].url}}" binderror="" bindload=""></image></view>
+				</view>
+				<view wx:else  class="news_item">
+					<text data-index="{{i}}" class="title" bindtap="redirectTodetail">{{item.title}}</text>
+					<view class="news-source">{{item.source}}</view>
+				</view>
+		
+		</block>
+	</scroll-view>
+</view>
+<loading hidden="{{hiddenLoading}}">数据加载中</loading>

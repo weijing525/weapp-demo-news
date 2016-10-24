@@ -1,0 +1,9 @@
+view{
+	font-family: "microsoft yahei";
+	font-size: 14px;
+}
+.page-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}

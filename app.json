@@ -1,0 +1,12 @@
+{
+	"pages":[
+		"pages/index/index",
+		"pages/detail/detail"
+	],
+	"networkTimeout":{
+		"request":10000,
+		"downloadFile":10000
+	},
+	"debug":false,
+	"enablePullDownRefresh": true
+}

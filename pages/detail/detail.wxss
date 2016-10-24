@@ -1,0 +1,15 @@
+.detail{
+	padding: 10px;
+}
+.para{
+	line-height: 22px;
+	text-indent: 2em;
+}
+.preimg{
+	width: 200px;
+	height: 160px;
+	margin:0 auto;
+	display: block;
+	text-align: center;
+	padding: 10px 0;
+}

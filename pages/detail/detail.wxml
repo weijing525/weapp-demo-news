@@ -1,0 +1,6 @@
+<view class="detail">
+	<block wx:for="{{content}}" wx:for-index="i">
+		<view class="para" wx:if="{{item.para}}">{{item.para}}</view>
+		<view class="para" wx:if="{{item.src}}"><image class="preimg" style="width:200px;height: 120px;margin:0 auto;display: block" mode="" src="{{item.src}}"></image></view>
+	</block>
+</view>
